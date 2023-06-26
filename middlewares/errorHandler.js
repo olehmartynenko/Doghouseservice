@@ -12,6 +12,12 @@ export class NotFoundError extends BaseError {
   }
 }
 
+export class ValidationError extends BaseError {
+  constructor(message = 'Invalid data provided') {
+    super(message, 400, 'ValidationError')
+  }
+}
+
 export const invalidPathHandler = (req, res, next) => {
   next(new NotFoundError('Path not found'))
 }
