@@ -5,10 +5,11 @@ const createDog = async (name, color, tail_length, weight) => {
   return dog
 }
 
-const getDogs = async (paginate) => {
+const getDogs = async (paginate, sort) => {
   const dogs = await Dog.findAll({
     limit: paginate.pageSize,
     offset: paginate.offset,
+    order: [[sort.attribute, sort.order]],
   })
   return dogs
 }

@@ -12,8 +12,8 @@ export const createDog = async (req, res, next) => {
 
 export const getDogs = async (req, res, next) => {
   try {
-    const { paginate } = req
-    const dogs = await dogService.getDogs(paginate)
+    const { paginate, sort } = req
+    const dogs = await dogService.getDogs(paginate, sort)
     return res.send(dogs)
   } catch (err) {
     next(err)
