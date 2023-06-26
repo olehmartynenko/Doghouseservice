@@ -5,4 +5,9 @@ const createDog = async (name, color, tail_length, weight) => {
   return dog
 }
 
-export default { createDog }
+const getDogs = async () => {
+  const dogs = await Dog.findAll()
+  return dogs
+}
+
+export default { createDog, getDogs }

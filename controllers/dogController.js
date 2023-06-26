@@ -9,3 +9,12 @@ export const createDog = async (req, res, next) => {
     next(err)
   }
 }
+
+export const getDogs = async (req, res, next) => {
+  try {
+    const dogs = await dogService.getDogs()
+    return res.send(dogs)
+  } catch (err) {
+    next(err)
+  }
+}
