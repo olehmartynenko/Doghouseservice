@@ -4,7 +4,7 @@ export const createDog = async (req, res, next) => {
   const { name, color, tail_length, weight } = req.body
   try {
     const dog = await dogService.createDog(name, color, tail_length, weight)
-    return res.send(dog)
+    return res.status(201).send(dog)
   } catch (err) {
     next(err)
   }

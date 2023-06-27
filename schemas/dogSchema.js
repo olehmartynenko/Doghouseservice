@@ -9,12 +9,12 @@ export const dogSchema = Joi.object({
     'any.required': 'Color is required',
     'string.empty': 'Color is required',
   }),
-  tail_length: Joi.number().required().min(0).messages({
+  tail_length: Joi.number().required().min(1).messages({
     'any.required': 'Tail length is required',
-    'number.min': 'Tail length must be greater than or equal to 0',
+    'number.min': 'Tail length must be greater than 0',
   }),
-  weight: Joi.number().required().min(0).messages({
+  weight: Joi.number().required().min(1).messages({
     'any.required': 'Weight is required',
-    'number.min': 'Weight must be greater than or equal to 0',
+    'number.min': 'Weight must be greater than 0',
   }),
 })
