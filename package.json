@@ -5,8 +5,9 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "start": "node --watch app.js",
-    "createAndSeedDb": "node scripts/createDb.js && npx sequelize db:seed:all"
+    "start": "node app.js",
+    "createAndSeedDb": "node scripts/createDb.js && npx sequelize db:seed:all",
+    "dev": "node --watch app.js"
   },
   "author": "",
   "license": "ISC",
