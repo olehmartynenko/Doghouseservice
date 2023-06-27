@@ -1,6 +1,7 @@
-import db from '../models/index.js'
-const { Sequelize, sequelize } = db
 import config from '../config/db.js'
+import db from '../models/index.js'
+import { generateDogs } from '../utils/generateDogs.js'
+const { Sequelize, sequelize } = db
 
 const createDb = async () => {
   const rootSequelize = new Sequelize({
@@ -16,8 +17,13 @@ const createDb = async () => {
     console.log(error)
   } finally {
     await rootSequelize.close()
-    
+
     await sequelize.sync()
+
+    const dogs = generateDogs(100)
+
+    await sequelize.getQueryInterface().bulkInsert('dogs', dogs)
+
     await sequelize.close()
   }
 }

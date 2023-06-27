@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node app.js",
-    "createAndSeedDb": "node scripts/createDb.js && npx sequelize db:seed:all",
+    "createAndSeedDb": "node scripts/createAndSeedDb.js",
     "dev": "node --watch app.js"
   },
   "author": "",
@@ -19,7 +19,7 @@
     "sequelize": "^6.32.1"
   },
   "devDependencies": {
-    "sequelize-cli": "^6.6.1",
+    "@faker-js/faker": "^8.0.2",
     "swagger-ui-express": "^4.6.3"
   }
 }
