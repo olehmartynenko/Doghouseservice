@@ -16,6 +16,7 @@ const createDb = async () => {
     console.log(error)
   } finally {
     await rootSequelize.close()
+    
     await sequelize.sync()
     await sequelize.close()
   }
